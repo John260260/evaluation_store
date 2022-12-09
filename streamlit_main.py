@@ -31,7 +31,7 @@ model_status= ["CNF","RAC"]
 # dtd_available= ("0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15")
 today = datetime.date.today()
 yesterday = today - datetime.timedelta(days=1)
-prior_10days = today - datetime.timedelta(days=10)
+prior_3days = today - datetime.timedelta(days=3)
 class_available=["ALL_CLASS","1A","2A","2S","3A","SL"]
 
 form_1=st.sidebar.form(key="Options")
@@ -39,7 +39,7 @@ form_1.header("Params")
 prob_mode= form_1.radio("**A] Select the Prob-Mode:**", mode, index=0)
 quota = form_1.radio("**B]  Quotas:**", Quota_stauts, index=0)
 model = form_1.radio("**C]  Model:**", model_status, index=1)
-start_date= form_1.date_input("**D] Select the start-date range of doj for analysis:**",(prior_10days))
+start_date= form_1.date_input("**D] Select the start-date range of doj for analysis:**",(prior_3days))
 end_date= form_1.date_input("**E] Select the end-date range of doj for analysis:**",(yesterday))
 form_1.write('<style>div.row-widget.stRadio >div{flex-direction:row;}</style>', unsafe_allow_html=True)
 # no_of_days = form_1.number_input("select no_of_days from 0-15", min_value=0.0, max_value=15.0, value=10.0, step=1.0)
